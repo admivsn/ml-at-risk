@@ -21,6 +21,7 @@ Feel free to also include any other files that show your working / the things yo
 * Use `classification_report` to inspect more model metrics
 * Tweak model to use parameter for imbalanced data
 * Perform hyperparameter tuning on model using brute force 5-fold cross validation
+* Add functionality to train multiple models and compare
 
 ### Any other ideas or notes
 *Note down any other ideas you had here*
