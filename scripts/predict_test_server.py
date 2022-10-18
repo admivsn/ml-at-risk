@@ -1,8 +1,6 @@
 import json
 import requests
 
-predict_json = {'instances': [[50, 20], [700, 300]]}
-
 # Mock input data as list of dicts
 inputs = [
     {
