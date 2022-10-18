@@ -1,3 +1,5 @@
+from app.train import preprocess
+
 import joblib
 import uvicorn
 import pandas as pd
@@ -29,6 +31,9 @@ async def predict(request: Request):
     
     # Convert list of dicts to dataframe
     df_input = pd.DataFrame(input)
+
+    # Apply identical preprocessing as to training data
+    df_input = preprocess(df_input)
 
     # Predict each input row
     df_predictions = model["clf"].predict(df_input)

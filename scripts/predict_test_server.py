@@ -7,11 +7,17 @@ predict_json = {'instances': [[50, 20], [700, 300]]}
 inputs = [
     {
         'deposits': 50,
+        'withdrawals': 0,
         'stakes': 20,
+        'product': 'bet',
+        'age': '50+',
     },
     {
         'deposits': 700,
+        'withdrawals': 0,
         'stakes': 300,
+        'product': 'bet',
+        'age': '<30',
     },
 ]
 
