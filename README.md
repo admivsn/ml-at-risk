@@ -20,6 +20,7 @@ Feel free to also include any other files that show your working / the things yo
 * Engineered some new features to use in the model
 * Use `classification_report` to inspect more model metrics
 * Tweak model to use parameter for imbalanced data
+* Perform hyperparameter tuning on model using brute force 5-fold cross validation
 
 ### Any other ideas or notes
 *Note down any other ideas you had here*
