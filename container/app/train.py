@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
 
 
 def preprocess(df):
@@ -47,8 +48,7 @@ def train():
     estimator.fit(X, y)
 
     # Print summary of model performance
-    accuracy = accuracy_score(y, estimator.predict(X))
-    print(f"Train accuracy: {accuracy:.3f}")
+    print(classification_report(y, estimator.predict(X)))
 
     # Write model to file
     joblib.dump(estimator, 'app/data/model.joblib')

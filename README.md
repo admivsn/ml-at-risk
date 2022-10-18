@@ -16,8 +16,9 @@ Feel free to also include any other files that show your working / the things yo
 ### Things you changed
 * Load model once on startup instead of every time `predict` endpoint is called
 * Made API input more robust - changed to a list of dicts (each record has named parameters) instead of dict with a single key containing a list of lists (each record has unnamed parameters)
-* Use all features in the model - updated `README.md` with instructions to rebuild docker container after model training
+* Use all features in the model
 * Engineered some new features to use in the model
+* Use `classification_report` to inspect more model metrics
 
 ### Any other ideas or notes
 *Note down any other ideas you had here*
@@ -71,11 +72,10 @@ When you change the code in the container this script will rebuild it for you.
 
 #### Train the model
 
-Train the model by running train.py within the container and rebuild the container with the latest model.
+Train the model by running train.py within the container.
 
 ```
 ./scripts/train.sh
-./scripts/docker_build.sh
 ```
 
 #### Start the predict server
