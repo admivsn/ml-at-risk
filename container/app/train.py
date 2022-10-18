@@ -41,8 +41,11 @@ def train():
     X = df.drop(columns="target")
     y = df["target"]
 
+    # Calculate class weight (as slightly imbalanced)
+    class_weight = y.value_counts(normalize=True).to_dict()
+
     # Define model
-    estimator = LogisticRegression(penalty="none")
+    estimator = LogisticRegression(penalty="none", class_weight=class_weight)
 
     # Train on entire dataset
     estimator.fit(X, y)
