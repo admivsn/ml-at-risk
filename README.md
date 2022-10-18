@@ -24,7 +24,15 @@ Feel free to also include any other files that show your working / the things yo
 * Add functionality to train multiple models and compare
 
 ### Any other ideas or notes
-*Note down any other ideas you had here*
+* Current model performs badly for positives in the target class, this needs to be addressed (is there enough variability in the data?)
+* Decide if accuracy is the best measure to assess model performance in this cases
+* Add unit tests
+* Add GH actions for `pep8` and unit tests, and document how to enforce using `pre-commit`
+* Add more pre-processing to enhance the model and use `Pipeline` to ensure it is applied identically to real data:
+    - Handle missing values better by imputing
+    - Scale values 
+* Add logging to training script
+
 ---
 
 ## Using this repo
