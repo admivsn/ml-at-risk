@@ -3,10 +3,21 @@ import requests
 
 predict_json = {'instances': [[50, 20], [700, 300]]}
 
-headers = {'content-type': 'application/json', 'charset': 'utf-8'}
+# Mock input data as list of dicts
+inputs = [
+    {
+        'deposits': 50,
+        'stakes': 20,
+    },
+    {
+        'deposits': 700,
+        'stakes': 300,
+    },
+]
 
-response = requests.post("http://localhost:8080/predict",
-                         data=json.dumps(predict_json),
-                         headers=headers)
-
+response = requests.post(
+    url="http://localhost:8080/predict",
+    data=json.dumps(inputs),
+    headers={'content-type': 'application/json', 'charset': 'utf-8'}
+)
 print(response.json())

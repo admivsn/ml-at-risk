@@ -25,14 +25,16 @@ async def predict(request: Request):
     Create an endpoint for generating predictions.
     """
     # wait for data passed to the endpoint
-    request_json = await request.json()
-    instances = request_json["instances"]
+    input = await request.json()
+    
+    # Convert list of dicts to dataframe
+    df_input = pd.DataFrame(input)
 
-    col_names = ['deposits', 'stakes']
-    inputs = pd.DataFrame(instances, columns=col_names)
+    # Predict each input row
+    df_predictions = model["clf"].predict(df_input)
 
-    outputs = model["clf"].predict(inputs)
-    return {"predictions": outputs.tolist()}
+    # Output as a list
+    return df_predictions.tolist()
 
 
 if __name__ == "__main__":
