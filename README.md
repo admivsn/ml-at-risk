@@ -14,7 +14,7 @@ Feel free to also include any other files that show your working / the things yo
 ## Candidate notes
 
 ### Things you changed
-*Tell us about the things you changed here*
+* Load model once on startup instead of every time `predict` endpoint is called
 
 ### Any other ideas or notes
 *Note down any other ideas you had here*
