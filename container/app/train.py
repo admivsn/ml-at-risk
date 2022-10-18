@@ -14,6 +14,11 @@ def preprocess(df):
     df = df.drop(columns=["product"])
     df["age"] = df["age"].map({"<30": 0, "30-50": 1, "50+": 2})
 
+    # Engineer useful(?) features
+    df["deposits_staked"] = df.apply(lambda x: 0 if x["deposits"] == 0 else x["stakes"] / x["deposits"], axis=1)
+    df["deposits_withdrawn"] = df.apply(lambda x: 0 if x["deposits"] == 0 else x["withdrawals"] / x["deposits"], axis=1)
+    df["net_withdrawn"] = df["withdrawals"] - df["deposits"]
+
     return df
 
 

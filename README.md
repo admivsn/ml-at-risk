@@ -17,6 +17,7 @@ Feel free to also include any other files that show your working / the things yo
 * Load model once on startup instead of every time `predict` endpoint is called
 * Made API input more robust - changed to a list of dicts (each record has named parameters) instead of dict with a single key containing a list of lists (each record has unnamed parameters)
 * Use all features in the model - updated `README.md` with instructions to rebuild docker container after model training
+* Engineered some new features to use in the model
 
 ### Any other ideas or notes
 *Note down any other ideas you had here*
