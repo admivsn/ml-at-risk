@@ -43,7 +43,9 @@ def train():
     y = df["target"]
 
     # Calculate class weight (as slightly imbalanced)
-    class_weight = y.value_counts(normalize=True).to_dict()
+    class_weight = y.value_counts()
+    class_weight =  max(class_weight) / class_weight
+    class_weight = class_weight.to_dict()
 
     # Define models to try (note for param_grids not all combinations are valid, so using list of valid dicts)
     models = {
@@ -96,7 +98,7 @@ def train():
                         param_grid=m["param_grids"], 
                         n_jobs=-1, 
                         cv=cv, 
-                        scoring='accuracy', 
+                        scoring='f1', 
                         error_score=0,
                         return_train_score=True
                     ).fit(X, y).cv_results_
