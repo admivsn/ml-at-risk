@@ -98,7 +98,7 @@ def train():
                         param_grid=m["param_grids"], 
                         n_jobs=-1, 
                         cv=cv, 
-                        scoring='accuracy', 
+                        scoring='f1', 
                         error_score=0,
                         return_train_score=True
                     ).fit(X, y).cv_results_
